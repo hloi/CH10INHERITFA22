@@ -3,6 +3,8 @@
 //
 #include <iostream>
 #include "GenericItem.h"
+#include <sstream>
+
 using namespace std;
 //  name(name)
 //  name = name
@@ -29,6 +31,17 @@ void GenericItem::setQuantity(int quantity) {
 }
 
 GenericItem::GenericItem(std::string name, int quantity) {
+    cout << "GenericItem non-default constructor." << endl;
     this->name = name;
     this->quantity = quantity;
+}
+
+GenericItem::GenericItem() {
+    cout << "GenericItem default constructor." << endl;
+}
+
+std::string GenericItem::to_string() {
+    ostringstream oss;
+    oss << name << ", " << quantity;
+    return oss.str() ;
 }

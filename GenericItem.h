@@ -17,7 +17,7 @@ private:
     int quantity;
 public:
 
-    GenericItem() {}
+    GenericItem();
 
     GenericItem(std::string name, int quantity);
 
@@ -29,6 +29,7 @@ public:
 
     void setQuantity(int quantity);
 
+    std::string to_string();
 
 
 };
